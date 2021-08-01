@@ -1,0 +1,50 @@
+#@ load("@ytt:data", "data")
+
+#@ def labels():
+artificial-tweetener: ""
+#@ end
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: artificial-tweetener
+spec:
+  selector: #@ labels()
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: artificial-tweetener
+spec:
+  selector:
+    matchLabels: #@ labels()
+  template:
+    metadata:
+      labels: #@ labels()
+    spec:
+      containers:
+      - name: artificial-tweetener
+        image: #@ data.values.docker_image
+        env:
+          - name: TWIT_CONSUMER_KEY
+            valueFrom:
+              secretKeyRef:
+                name: opensesame
+                key: twit-consumer-key
+          - name: TWIT_CONSUMER_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: opensesame
+                key: twit-consumer-secret
+          - name: TWIT_ACCESS_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: opensesame
+                key: twit-access-token
+          - name: TWIT_ACCESS_TOKEN_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: opensesame
+                key: twit-access-token-secret

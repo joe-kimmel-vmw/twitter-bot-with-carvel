@@ -1,0 +1,3 @@
+#@data/values
+---
+docker_image: jkimmelvmware/toy-projects:artificialtweetener-v1
