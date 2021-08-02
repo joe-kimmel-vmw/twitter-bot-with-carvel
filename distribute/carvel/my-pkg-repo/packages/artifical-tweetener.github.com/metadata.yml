@@ -1,0 +1,11 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  name: artificial-tweetener.github.com
+spec:
+  displayName: "Artificial Tweetener"
+  longDescription: "the tweet bot army you never wanted"
+  shortDescription: "not really any worse than most of twitter"
+  categories:
+  - demo
+
