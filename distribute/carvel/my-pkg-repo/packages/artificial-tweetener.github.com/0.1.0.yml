@@ -1,16 +1,16 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: artificial-tweetener.github.com.v1
+  name: artificial-tweetener.github.com.0.1.0
 spec:
   refName: artificial-tweetener.github.com
-  version: v1
+  version: 0.1.0
   releaseNotes: try not to be so jealous
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: index.docker.io/jkimmelvmware/toy-projects:artificialtweetener-v1
+          image: index.docker.io/jkimmelvmware/toy-projects:artificialtweetener-0.1.0
       template:
       - ytt:
           paths:
@@ -20,4 +20,4 @@ spec:
           - "-"
           - ".imgpkg/images.yml"
       deploy:
-      - kap: {}
+      - kapp: {}
