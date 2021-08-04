@@ -4,7 +4,7 @@ set -eux
 
 VERSION=v1
 REPOTAG=jkimmelvmware/toy-projects:artificialtweetener-$VERSION
-REPOHOST="https://index.docker.io"
+REPOHOST="index.docker.io"
 
 docker build . -t ${REPOTAG}
 # may need to `docker login --username="jkimmelvmware"` if access is denied
@@ -21,7 +21,7 @@ kbld -f distribute/carvel/package-contents/config/ --imgpkg-lock-output distribu
 imgpkg push -b ${REPOHOST}/${REPOTAG} -f distribute/carvel/package-contents/
 
 # TODO (should i do this with ytt instead?)
-cat > ${VERSION}.yml <<- EOF
+cat > distribute/carvel/my-pkg-repo/packages/artificial-tweetener.github.com/${VERSION}.yml <<- EOF
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
@@ -49,4 +49,4 @@ EOF
 
 kbld -f distribute/carvel/my-pkg-repo/packages/ --imgpkg-lock-output distribute/carvel/my-pkg-repo/.imgpkg/images.yml
 
-imgpkg push -b ${REPO_HOST}/${REPOTAG} -f distribute/carvel/my-pkg-repo
+imgpkg push -b ${REPOHOST}/${REPOTAG} -f distribute/carvel/my-pkg-repo
