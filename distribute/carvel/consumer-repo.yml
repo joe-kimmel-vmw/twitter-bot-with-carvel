@@ -6,4 +6,4 @@ metadata:
 spec:
   fetch:
     imgpkgBundle:
-      image: index.docker.io/packages/my-pkg-repo/0.1.0
+      image: index.docker.io/jkimmelvmware/toy-projects:artificialtweetener-0.1.0
