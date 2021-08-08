@@ -4,6 +4,7 @@ kind: PackageRepository
 metadata:
   name: simple-package-repository
 spec:
+  syncPeriod: 30m
   fetch:
     imgpkgBundle:
-      image: index.docker.io/jkimmelvmware/toy-projects:artificialtweetener-0.1.0
+      image: index.docker.io/jkimmelvmware/my-pkg-repo:packages-1.0.0
