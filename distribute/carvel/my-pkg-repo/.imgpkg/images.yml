@@ -3,5 +3,5 @@ apiVersion: imgpkg.carvel.dev/v1alpha1
 images:
 - annotations:
     kbld.carvel.dev/id: index.docker.io/jkimmelvmware/toy-projects:artificialtweetener-0.1.0
-  image: index.docker.io/jkimmelvmware/toy-projects@sha256:763ec937ca6e5aa921c2321b9a80176239491fde749f2bc4b73e62f7da5180f9
+  image: index.docker.io/jkimmelvmware/toy-projects@sha256:1f1de065b3df4c2165824d0ab72a0034e1179d01948deed85693bfcaf62bfbce
 kind: ImagesLock

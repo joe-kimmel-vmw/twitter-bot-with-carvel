@@ -24,6 +24,7 @@ spec:
     metadata:
       labels: #@ labels()
     spec:
+      syncPeriod: 30m
       containers:
       - name: artificial-tweetener
         image: #@ data.values.docker_image

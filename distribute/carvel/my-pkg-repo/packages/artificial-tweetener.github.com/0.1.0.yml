@@ -3,6 +3,7 @@ kind: Package
 metadata:
   name: artificial-tweetener.github.com.0.1.0
 spec:
+  syncPeriod: 30m
   refName: artificial-tweetener.github.com
   version: 0.1.0
   releaseNotes: try not to be so jealous

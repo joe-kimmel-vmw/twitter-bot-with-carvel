@@ -32,6 +32,7 @@ kind: Package
 metadata:
   name: ${APPNAME}.${IMGVERSION}
 spec:
+  syncPeriod: 30m
   refName: ${APPNAME}
   version: ${IMGVERSION}
   releaseNotes: try not to be so jealous
@@ -63,9 +64,10 @@ kind: PackageRepository
 metadata:
   name: simple-package-repository
 spec:
+  syncPeriod: 30m
   fetch:
     imgpkgBundle:
-      image: ${REPOHOST}/${IMGREPOTAG}
+      image: ${REPOHOST}/${PKGREPOTAG}
 EOF
 
 cat > distribute/carvel/pkginstall.yml <<-EOF
